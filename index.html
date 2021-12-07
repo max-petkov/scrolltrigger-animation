@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Animation</title>
+    <style>
+        :root {
+            --color-dark: #202124;
+            --color-grey: #757b80;
+            --color-blue: #8ab4f8;
+            --color-purple: #c588f9;
+        }
+
+        /* General */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 400%;
+            height: 100vh;
+            display: flex;
+            flex-wrap: nowrap;
+            background-color: var(--color-dark);
+        }
+
+        /* Animations */
+
+        /* Circle */
+        .circle-container {
+            width: 1000px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background-color: var(--color-purple);
+        }
+
+        /* Text */
+        .text-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text {
+            color: var(--color-blue);
+            font-size: 256px;
+        }
+
+        .letter-container {
+            display: inline-block;
+            overflow: hidden;
+            background-color: var(--color-dark);
+        }
+
+        .letter {
+            display: inline-block;
+            letter-spacing: 16px;
+        }
+
+        /* Footer */
+        footer,
+        .random-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--color-dark);
+        }
+
+        h2 {
+            font-size: 128px;
+            color: var(--color-blue);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="random-container">
+        <h2>Random Text...</h2>
+    </section>
+    <section class="container smooth-scroll" data-scroll-container>
+        <section class="animation circle-container" data-scroll-section>
+            <!-- <div class="circle"></div> -->
+        </section>
+        <section class="animation text-container" data-scroll-section>
+            <div class="text" data-scroll data-scroll-speed="1">work+with+us</div>
+        </section>
+        <section class="animation circle-container" data-scroll-section>
+            <!-- <div class="circle"></div> -->
+        </section>
+    </section>
+    <footer>
+        <h2>Footer</h2>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="animation.js"></script>
+</body>
+
+</html>
